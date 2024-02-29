@@ -6,6 +6,7 @@ def bag_of_words(documents: List[str]) -> List[List[str]]:
    
     bag_of_words_representation = []
 
+    # BoW for the documents by tokenization and counting
     for document in documents:
         words = document.split()
         word_counts = Counter(words)
@@ -105,6 +106,6 @@ def calculate_text_similarity(doc1: str, doc2: str) -> float:
 # similarity_score = calculate_text_similarity(doc1, doc2)
 # print("Similarity between the two documents:", similarity_score)
 
-text = "Natural language processing (NLP) is a subfield of linguistics, computer science, and artificial intelligence concerned with the interactions between computers and human language, in particular how to program computers to process and analyze large amounts of natural language data."
-ngrams = generate_ngrams(text, 4)
-print(ngrams)
+# text = "Natural language processing (NLP) is a subfield of linguistics, computer science, and artificial intelligence concerned with the interactions between computers and human language, in particular how to program computers to process and analyze large amounts of natural language data."
+# ngrams = generate_ngrams(text, 4)
+# print(ngrams)

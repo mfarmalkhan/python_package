@@ -8,9 +8,6 @@ from functools import reduce
 from nltk.stem import WordNetLemmatizer
 
 
-sample_text = "Machine learning 3 uses %Python\ extensively a the that better feelings."
-
-
 def remove_punctuation(text):
     # use regex here
     return re.sub('\W+', ' ', text)
@@ -42,8 +39,10 @@ def lemmatization(text):
     return lem_sentence
 
 
+# sample_text = "Machine learning 3 uses %Python\ extensively a the that better feelings."
+
 # print(tokenize(sample_text))
 # print(clean(sample_text))
 # print(remove_stopwords(sample_text))
 # print(stemming(sample_text))
-print(lemmatization(sample_text))
+# print(lemmatization(sample_text))
