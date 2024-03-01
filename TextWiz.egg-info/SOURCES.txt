@@ -1,0 +1,16 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+TextWiz.egg-info/PKG-INFO
+TextWiz.egg-info/SOURCES.txt
+TextWiz.egg-info/dependency_links.txt
+TextWiz.egg-info/requires.txt
+TextWiz.egg-info/top_level.txt
+tests/test_mining.py
+tests/test_preprocessing.py
+tests/test_visuals.py
+textwiz/__init__.py
+textwiz/mining.py
+textwiz/preprocessing.py
+textwiz/visuals.py

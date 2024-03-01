@@ -1,0 +1,8 @@
+matplotlib>=3.5.1
+nltk>=3.8.1
+numpy>=1.21.0
+wordcloud==1.8.0
+setuptools>=40.2.0
+
+[dev]
+pytest~=7.1.2

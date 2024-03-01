@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TextWiz"
+version = "0.0.1"
+requires-python = ">=3.6"
+dependencies = [
+    "matplotlib>=3.5.1",
+    "nltk>=3.8.1",
+    "numpy>=1.21.0",
+    "wordcloud==1.8.0",
+    "setuptools>=40.2.0" 
+    ]
+
+
+[project.optional-dependencies]
+dev = ["pytest ~= 7.1.2"]
