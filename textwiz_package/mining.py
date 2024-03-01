@@ -3,6 +3,16 @@ from collections import Counter
 import math
 
 def bag_of_words(documents: List[str]) -> List[List[str]]:
+    
+    """
+    Generate a Bag of Words representation for a list of documents.
+
+    Parameters:
+        documents (List[str]): A list of documents.
+
+    Returns:
+        List[List[str]]: Bag of Words representation where each element is a list of words in the document.
+    """
    
     bag_of_words_representation = []
 
@@ -18,12 +28,33 @@ def bag_of_words(documents: List[str]) -> List[List[str]]:
 
 def generate_ngrams(text: str, n: int) -> List[str]:
     
+    """
+    Generate N-grams from a given text.
+
+    Parameters:
+        text (str): The input text.
+        n (int): The size of the N-grams.
+
+    Returns:
+        List[str]: A list of N-grams.
+    """
+    
     words = text.split()
     ngrams = [words[i:i+n] for i in range(len(words)-n+1)]
     return [' '.join(ngram) for ngram in ngrams]
 
 
 def tf_idf(documents: List[str]) -> List[List[float]]:
+    
+    """
+    Calculate TF-IDF (Term Frequency-Inverse Document Frequency) vectors for a list of documents.
+
+    Parameters:
+        documents (List[str]): List of documents.
+
+    Returns:
+        List[List[float]]: TF-IDF vectors for each document.
+    """
    
     # Function to calculate term frequency (TF) for a document
     def calculate_tf(document):
@@ -52,6 +83,17 @@ def tf_idf(documents: List[str]) -> List[List[float]]:
 
 def keyword_extraction_imp(text: str, num_keywords: int = 5) -> List[str]:
     
+    """
+    Extract the top N keywords from the text based on importance (TF-IDF scores).
+
+    Parameters:
+        text (str): Input text.
+        num_keywords (int): Number of keywords to extract (default is 5).
+
+    Returns:
+        List[str]: List of top keywords.
+    """
+    
     # Calculate TF-IDF vectors for the input text
     tfidf_vectors = tf_idf([text])
 
@@ -63,6 +105,17 @@ def keyword_extraction_imp(text: str, num_keywords: int = 5) -> List[str]:
 
 
 def keyword_extraction_freq(text: str, num_keywords: int = 5) -> List[str]:
+    
+    """
+    Extract the top N keywords from the text based on frequency.
+
+    Parameters:
+        text (str): Input text.
+        num_keywords (int): Number of keywords to extract (default is 5).
+
+    Returns:
+        List[str]: List of top keywords.
+    """
 
     words = text.split()
     word_counts = Counter(words)
@@ -72,6 +125,17 @@ def keyword_extraction_freq(text: str, num_keywords: int = 5) -> List[str]:
 
 
 def calculate_text_similarity(doc1: str, doc2: str) -> float:
+    
+    """
+    Calculate similarity between two documents using cosine similarity of TF-IDF vectors.
+
+    Parameters:
+        doc1 (str): The first document.
+        doc2 (str): The second document.
+
+    Returns:
+        float: The cosine similarity score between the two documents.
+    """
    
     # Calculate TF-IDF vectors for the two documents
     tfidf_vectors = tf_idf([doc1, doc2])

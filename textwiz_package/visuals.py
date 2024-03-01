@@ -6,6 +6,13 @@ import numpy as np
 
 
 def word_cloud(text: str) -> None:
+    
+    """
+    Generate and display a word cloud visualization for the given text.
+
+    Parameters:
+        text (str): The input text for generating the word cloud.
+    """
 
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
 
@@ -15,6 +22,13 @@ def word_cloud(text: str) -> None:
     plt.show()
 
 def bar_chart(text: str) -> None:
+    
+    """
+    Create and display a bar chart showing the frequency of each word in the input text.
+
+    Parameters:
+        text (str): The input text for which the bar chart will be generated.
+    """
 
     # Tokenize and sort words
         

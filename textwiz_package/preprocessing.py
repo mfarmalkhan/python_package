@@ -9,13 +9,47 @@ from nltk.stem import WordNetLemmatizer
 
 
 def remove_punctuation(text):
+    
+    """
+    Remove punctuation characters from the text using regular expressions.
+
+    Parameters:
+        text (str): The input text from which punctuation characters will be removed.
+
+    Returns:
+        str: The text with punctuation characters removed.
+    """
+    
     # use regex here
     return re.sub('\W+', ' ', text)
 
 def tokenize(text):
+    
+    """
+    Tokenize the text into words.
+
+    Parameters:
+        text (str): The input text to be tokenized.
+
+    Returns:
+        List[str]: A list of tokens (words) extracted from the text.
+    """
+    
     return text.split()
 
 def remove_stopwords(text, extra_words = None):
+    
+    """
+    Remove stopwords from the text.
+
+    Parameters:
+        text (str): The input text from which stopwords will be removed.
+        extra_words (List[str], optional): Additional words to be considered as stopwords. Defaults to None.
+
+    Returns:
+        List[str]: A list of tokens (words) with stopwords removed.
+    """
+    
     tokens = word_tokenize(text)        
     stop_words = stopwords.words('english')
  
@@ -27,12 +61,34 @@ def remove_stopwords(text, extra_words = None):
     return filtered_tokens        
 
 def stemming(text):
+    
+    """
+    Perform stemming on the text.
+
+    Parameters:
+        text (str): The input text to be stemmed.
+
+    Returns:
+        str: The text with words stemmed using the Porter stemming algorithm.
+    """
+    
     tokens = word_tokenize(text)
     ps = PorterStemmer()
     stemmed_sentence = reduce(lambda x, y: x + " " + ps.stem(y), tokens, "")
     return stemmed_sentence
 
 def lemmatization(text):
+    
+    """
+    Perform lemmatization on the text.
+
+    Parameters:
+        text (str): The input text to be lemmatized.
+
+    Returns:
+        str: The text with words lemmatized using the WordNet lemmatizer.
+    """
+    
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
     lem_sentence = reduce(lambda x, y: x + " " + lemmatizer.lemmatize(y), tokens, "")
