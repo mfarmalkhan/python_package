@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Welcome to TextWiz’s documentation! &#8212; TextWiz</title>
+    <title>Welcome to TextWiz documentation! &#8212; TextWiz</title>
   
   
   
@@ -282,7 +282,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to TextWiz’s documentation!</h1>
+    <h1>Welcome to TextWiz documentation!</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -293,6 +293,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-steps">Preprocessing steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-mining">Text Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-analysis">Text Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
 </ul>
             </nav>
         </div>
@@ -304,8 +309,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="welcome-to-textwiz-s-documentation">
-<h1>Welcome to TextWiz’s documentation!<a class="headerlink" href="#welcome-to-textwiz-s-documentation" title="Permalink to this heading">#</a></h1>
+  <section id="welcome-to-textwiz-documentation">
+<h1>Welcome to TextWiz documentation!<a class="headerlink" href="#welcome-to-textwiz-documentation" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
@@ -321,16 +326,52 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/usage_example.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/usage_example.html">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/usage_example.html#text-processor">Text Processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/usage_example.html#text-analyzer">Text Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/usage_example.html#text-visualizer">Text Visualizer</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>The “textwiz” package consists of three main modules: preprocessing, mining, and visuals. Each module contains functions that address specific aspects of text analytics. The project’s goal is to offer a user-friendly and efficient toolkit for common text processing and mining tasks.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Site under construction</p>
-</div>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="preprocessing-steps">
+<h2>Preprocessing steps<a class="headerlink" href="#preprocessing-steps" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tokenization: Convert text into tokens.</p></li>
+<li><p>Remove special characters: Eliminate non-alphanumeric characters.</p></li>
+<li><p>Remove stopwords: Filter out common words that do not carry significant meaning.</p></li>
+<li><p>Stemming: Reduce words to their base or root form.</p></li>
+<li><p>Lemmatization: Normalize words to their dictionary form.</p></li>
+</ul>
+</section>
+<section id="text-mining">
+<h2>Text Mining<a class="headerlink" href="#text-mining" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Bag of Words: Represent text data as a matrix of word counts.</p></li>
+<li><p>N-grams: Extract contiguous sequences of n items from a given text.</p></li>
+<li><p>TF-IDF Vectorization: Convert text data into numerical vectors using Term Frequency-Inverse Document Frequency.</p></li>
+</ul>
+</section>
+<section id="text-analysis">
+<h2>Text Analysis<a class="headerlink" href="#text-analysis" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Extract top N keywords using frequency and importance: Identify most significant words or phrases based on frequency and relevance.</p></li>
+<li><p>Calculating cosine similarity between text documents: Measure the similarity between text documents using cosine of the angle between their vectors.</p></li>
+</ul>
+</section>
+<section id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Word Cloud: Generate a visual representation of word frequency in a text corpus.</p></li>
+<li><p>Bar Chart of word frequency: Display word frequency distribution using a bar chart.</p></li>
+</ul>
 </section>
 </section>
 
@@ -370,6 +411,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-steps">Preprocessing steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-mining">Text Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-analysis">Text Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
 </ul>
   </nav></div>
 

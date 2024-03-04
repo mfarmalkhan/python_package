@@ -269,7 +269,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -285,6 +287,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-processor">Text Processor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-analyzer">Text Analyzer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-visualizer">Text Visualizer</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -298,17 +310,22 @@ document.write(`
 <h1>TextWiz Package<a class="headerlink" href="#textwiz-package" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">textwiz.preprocessing</span> <span class="kn">import</span> <span class="n">TextProcessor</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import package libraries</span>
+<span class="kn">from</span> <span class="nn">textwiz.preprocessing</span> <span class="kn">import</span> <span class="n">TextProcessor</span>
 <span class="kn">from</span> <span class="nn">textwiz.mining</span> <span class="kn">import</span> <span class="n">TextAnalyzer</span>
 <span class="kn">from</span> <span class="nn">textwiz.visuals</span> <span class="kn">import</span> <span class="n">TextVisualizer</span>
 </pre></div>
 </div>
 </div>
 </div>
+<section id="text-processor">
+<h2>Text Processor<a class="headerlink" href="#text-processor" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">processor</span> <span class="o">=</span> <span class="n">TextProcessor</span><span class="p">(</span><span class="n">extra_stopwords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;some&#39;</span><span class="p">,</span> <span class="s1">&#39;extra&#39;</span><span class="p">,</span> <span class="s1">&#39;stopwords&#39;</span><span class="p">])</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Some example text with punctuation! And some extra words.&quot;</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;In the heart of the ancient forest, where sunlight filters through the dense canopy, lies a hidden sanctuary. Moss-covered stones mark the entrance, leading to a tranquil clearing encircled by towering trees.&quot;</span>
+
 <span class="n">processed_text</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">remove_punctuation</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="n">tokens</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">processed_text</span><span class="p">)</span>
 <span class="n">tokens_without_stopwords</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">remove_stopwords</span><span class="p">(</span><span class="n">processed_text</span><span class="p">)</span>
@@ -324,25 +341,28 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processed Text: Some example text with punctuation And some extra words 
-Tokens: [&#39;Some&#39;, &#39;example&#39;, &#39;text&#39;, &#39;with&#39;, &#39;punctuation&#39;, &#39;And&#39;, &#39;some&#39;, &#39;extra&#39;, &#39;words&#39;]
-Tokens without stopwords: [&#39;example&#39;, &#39;text&#39;, &#39;punctuation&#39;, &#39;words&#39;]
-Stemmed Text:  some exampl text with punctuat and some extra word
-Lemmatized Text:  Some example text with punctuation And some extra word
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processed Text: In the heart of the ancient forest where sunlight filters through the dense canopy lies a hidden sanctuary Moss covered stones mark the entrance leading to a tranquil clearing encircled by towering trees 
+Tokens: [&#39;In&#39;, &#39;the&#39;, &#39;heart&#39;, &#39;of&#39;, &#39;the&#39;, &#39;ancient&#39;, &#39;forest&#39;, &#39;where&#39;, &#39;sunlight&#39;, &#39;filters&#39;, &#39;through&#39;, &#39;the&#39;, &#39;dense&#39;, &#39;canopy&#39;, &#39;lies&#39;, &#39;a&#39;, &#39;hidden&#39;, &#39;sanctuary&#39;, &#39;Moss&#39;, &#39;covered&#39;, &#39;stones&#39;, &#39;mark&#39;, &#39;the&#39;, &#39;entrance&#39;, &#39;leading&#39;, &#39;to&#39;, &#39;a&#39;, &#39;tranquil&#39;, &#39;clearing&#39;, &#39;encircled&#39;, &#39;by&#39;, &#39;towering&#39;, &#39;trees&#39;]
+Tokens without stopwords: [&#39;heart&#39;, &#39;ancient&#39;, &#39;forest&#39;, &#39;sunlight&#39;, &#39;filters&#39;, &#39;dense&#39;, &#39;canopy&#39;, &#39;lies&#39;, &#39;hidden&#39;, &#39;sanctuary&#39;, &#39;Moss&#39;, &#39;covered&#39;, &#39;stones&#39;, &#39;mark&#39;, &#39;entrance&#39;, &#39;leading&#39;, &#39;tranquil&#39;, &#39;clearing&#39;, &#39;encircled&#39;, &#39;towering&#39;, &#39;trees&#39;]
+Stemmed Text:  in the heart of the ancient forest where sunlight filter through the dens canopi lie a hidden sanctuari moss cover stone mark the entranc lead to a tranquil clear encircl by tower tree
+Lemmatized Text:  In the heart of the ancient forest where sunlight filter through the dense canopy lie a hidden sanctuary Moss covered stone mark the entrance leading to a tranquil clearing encircled by towering tree
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="text-analyzer">
+<h2>Text Analyzer<a class="headerlink" href="#text-analyzer" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analyzer</span> <span class="o">=</span> <span class="n">TextAnalyzer</span><span class="p">()</span>
 
 <span class="c1"># Example documents</span>
 <span class="n">documents</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;This is the first document.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;This document is the second document.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;And this is the third one.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Is this the first document?&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;In the heart of the ancient forest, where sunlight filters through the dense canopy.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Moss-covered stones mark the entrance to a tranquil clearing encircled by towering trees.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Whispers of the wind intertwine with the songs of birds, creating a symphony of nature&#39;s harmony.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Time seems to stand still in this enchanted realm, where every leaf tells a tale and every rustle speaks of secrets untold.&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="c1"># Bag of Words representation</span>
@@ -352,7 +372,7 @@ Lemmatized Text:  Some example text with punctuation And some extra word
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Document </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">doc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Generating N-grams</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is an example sentence for generating N-grams.&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;In the heart of the ancient forest lies a hidden sanctuary.&quot;</span>
 <span class="n">ngrams</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">generate_ngrams</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">N-grams:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ngrams</span><span class="p">)</span>
@@ -364,67 +384,82 @@ Lemmatized Text:  Some example text with punctuation And some extra word
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Document </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">vector</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Keyword extraction based on importance (TF-IDF scores)</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is a sample text for keyword extraction based on importance.&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Whispers of the wind intertwine with the songs of birds, creating a symphony of nature&#39;s harmony.&quot;</span>
 <span class="n">keywords_imp</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">keyword_extraction_imp</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">num_keywords</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Keywords based on importance:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">keywords_imp</span><span class="p">)</span>
 
 <span class="c1"># Keyword extraction based on frequency</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is a sample text for keyword extraction based on frequency of words.&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Time seems to stand still in this enchanted realm, where every leaf tells a tale and every rustle speaks of secrets untold.&quot;</span>
 <span class="n">keywords_freq</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">keyword_extraction_freq</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">num_keywords</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Keywords based on frequency:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">keywords_freq</span><span class="p">)</span>
 
 <span class="c1"># Calculating text similarity</span>
-<span class="n">doc1</span> <span class="o">=</span> <span class="s2">&quot;This is a sample document.&quot;</span>
-<span class="n">doc2</span> <span class="o">=</span> <span class="s2">&quot;This is another sample document.&quot;</span>
+<span class="n">doc1</span> <span class="o">=</span> <span class="s2">&quot;In the heart of the ancient forest lies a hidden sanctuary.&quot;</span>
+<span class="n">doc2</span> <span class="o">=</span> <span class="s2">&quot;The ancient forest shelters a sacred grove where whispers of nature&#39;s secrets echo.&quot;</span>
 <span class="n">similarity_score</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">calculate_text_similarity</span><span class="p">(</span><span class="n">doc1</span><span class="p">,</span> <span class="n">doc2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Similarity between documents &#39;</span><span class="si">{</span><span class="n">doc1</span><span class="si">}</span><span class="s2">&#39; and &#39;</span><span class="si">{</span><span class="n">doc2</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">similarity_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Similarity between documents &#39;</span><span class="si">{</span><span class="n">doc1</span><span class="si">}</span><span class="s2">&#39; and &#39;</span><span class="si">{</span><span class="n">doc2</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">similarity_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bag of Words Representation:
-Document 1: [&#39;This&#39;, &#39;document.&#39;, &#39;first&#39;, &#39;is&#39;, &#39;the&#39;]
-Document 2: [&#39;This&#39;, &#39;document&#39;, &#39;document.&#39;, &#39;is&#39;, &#39;second&#39;, &#39;the&#39;]
-Document 3: [&#39;And&#39;, &#39;is&#39;, &#39;one.&#39;, &#39;the&#39;, &#39;third&#39;, &#39;this&#39;]
-Document 4: [&#39;Is&#39;, &#39;document?&#39;, &#39;first&#39;, &#39;the&#39;, &#39;this&#39;]
+Document 1: [&#39;In&#39;, &#39;ancient&#39;, &#39;canopy.&#39;, &#39;dense&#39;, &#39;filters&#39;, &#39;forest,&#39;, &#39;heart&#39;, &#39;of&#39;, &#39;sunlight&#39;, &#39;the&#39;, &#39;through&#39;, &#39;where&#39;]
+Document 2: [&#39;Moss-covered&#39;, &#39;a&#39;, &#39;by&#39;, &#39;clearing&#39;, &#39;encircled&#39;, &#39;entrance&#39;, &#39;mark&#39;, &#39;stones&#39;, &#39;the&#39;, &#39;to&#39;, &#39;towering&#39;, &#39;tranquil&#39;, &#39;trees.&#39;]
+Document 3: [&#39;Whispers&#39;, &#39;a&#39;, &#39;birds,&#39;, &#39;creating&#39;, &#39;harmony.&#39;, &#39;intertwine&#39;, &quot;nature&#39;s&quot;, &#39;of&#39;, &#39;songs&#39;, &#39;symphony&#39;, &#39;the&#39;, &#39;wind&#39;, &#39;with&#39;]
+Document 4: [&#39;Time&#39;, &#39;a&#39;, &#39;and&#39;, &#39;enchanted&#39;, &#39;every&#39;, &#39;in&#39;, &#39;leaf&#39;, &#39;of&#39;, &#39;realm,&#39;, &#39;rustle&#39;, &#39;secrets&#39;, &#39;seems&#39;, &#39;speaks&#39;, &#39;stand&#39;, &#39;still&#39;, &#39;tale&#39;, &#39;tells&#39;, &#39;this&#39;, &#39;to&#39;, &#39;untold.&#39;, &#39;where&#39;]
 
 N-grams:
-[&#39;This is an&#39;, &#39;is an example&#39;, &#39;an example sentence&#39;, &#39;example sentence for&#39;, &#39;sentence for generating&#39;, &#39;for generating N-grams.&#39;]
+[&#39;In the heart&#39;, &#39;the heart of&#39;, &#39;heart of the&#39;, &#39;of the ancient&#39;, &#39;the ancient forest&#39;, &#39;ancient forest lies&#39;, &#39;forest lies a&#39;, &#39;lies a hidden&#39;, &#39;a hidden sanctuary.&#39;]
 
 TF-IDF Vectors:
-Document 1: [0.05753641449035617, -0.044628710262841945, -0.044628710262841945, 0.05753641449035617, 0.05753641449035617]
-Document 2: [0.04794701207529681, 0.0, -0.03719059188570162, -0.03719059188570162, 0.11552453009332421, 0.04794701207529681]
-Document 3: [0.11552453009332421, 0.04794701207529681, -0.03719059188570162, -0.03719059188570162, 0.11552453009332421, 0.11552453009332421]
-Document 4: [0.13862943611198905, 0.05753641449035617, -0.044628710262841945, 0.05753641449035617, 0.13862943611198905]
+Document 1: [0.049510512897138946, 0.0, 0.049510512897138946, 0.0, 0.049510512897138946, 0.049510512897138946, 0.020548719460841487, 0.049510512897138946, 0.049510512897138946, 0.049510512897138946, 0.049510512897138946, 0.049510512897138946]
+Document 2: [0.053319013889226566, 0.053319013889226566, 0.053319013889226566, 0.0, 0.053319013889226566, 0.022129390188598528, -0.017164888562631517, 0.053319013889226566, 0.053319013889226566, 0.053319013889226566, 0.053319013889226566, 0.053319013889226566, 0.053319013889226566]
+Document 3: [0.04332169878499658, 0.0, 0.0, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658, -0.013946471957138107, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658]
+Document 4: [0.03150669002545206, 0.03150669002545206, 0.013076457838717312, 0.03150669002545206, 0.03150669002545206, 0.0, 0.03150669002545206, 0.03150669002545206, 0.03150669002545206, 0.013076457838717312, 0.06301338005090412, 0.03150669002545206, 0.03150669002545206, -0.010142888696100442, 0.03150669002545206, 0.03150669002545206, 0.03150669002545206, 0.03150669002545206, 0.0, 0.03150669002545206, 0.03150669002545206]
 
 Keywords based on importance:
-[&#39;This&#39;, &#39;is&#39;, &#39;a&#39;]
+[&#39;Whispers&#39;, &#39;of&#39;, &#39;the&#39;]
 
 Keywords based on frequency:
-[&#39;This&#39;, &#39;is&#39;, &#39;a&#39;]
+[&#39;every&#39;, &#39;Time&#39;, &#39;seems&#39;]
 
-Similarity between documents &#39;This is a sample document.&#39; and &#39;This is another sample document.&#39;: 0.89
+Similarity between documents &#39;In the heart of the ancient forest lies a hidden sanctuary.&#39; and &#39;The ancient forest shelters a sacred grove where whispers of nature&#39;s secrets echo.&#39;: 25.00%
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="text-visualizer">
+<h2>Text Visualizer<a class="headerlink" href="#text-visualizer" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visualizer</span> <span class="o">=</span> <span class="n">TextVisualizer</span><span class="p">()</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Some example text for visualization. This text will be visualized using the word cloud and bar chart.&quot;</span>
 
-<span class="n">visualizer</span><span class="o">.</span><span class="n">word_cloud</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="n">visualizer</span><span class="o">.</span><span class="n">bar_chart</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">text_vis</span> <span class="o">=</span> <span class="s2">&quot;In the heart of the ancient forest, where sunlight filters through the dense canopy, lies a hidden sanctuary. Moss-covered stones mark the entrance, leading to a tranquil clearing encircled by towering trees.&quot;</span>
+
+<span class="c1"># Word Cloud</span>
+<span class="n">visualizer</span><span class="o">.</span><span class="n">word_cloud</span><span class="p">(</span><span class="n">text_vis</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e81fda5f9e1981dee8f18069e5cd2dd1632d5085c66872c1c2b2c06f384bd582.png" src="../_images/e81fda5f9e1981dee8f18069e5cd2dd1632d5085c66872c1c2b2c06f384bd582.png" />
-<img alt="../_images/eea2f63a3afcf06a076c321a3f988d83f9b492dd8fe4567a6ab8361693670b84.png" src="../_images/eea2f63a3afcf06a076c321a3f988d83f9b492dd8fe4567a6ab8361693670b84.png" />
+<img alt="../_images/e6ef441d9e7514e819f2c899d536476fed88f85093c91b99b626b9870129e72b.png" src="../_images/e6ef441d9e7514e819f2c899d536476fed88f85093c91b99b626b9870129e72b.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bar chart</span>
+<span class="n">visualizer</span><span class="o">.</span><span class="n">bar_chart</span><span class="p">(</span><span class="n">text_vis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c174c5f8161af80b187bb5d33922fe506014922fb338a00f3df77078cd29890d.png" src="../_images/c174c5f8161af80b187bb5d33922fe506014922fb338a00f3df77078cd29890d.png" />
+</div>
+</div>
+</section>
 </section>
 
 
@@ -453,6 +488,22 @@ Similarity between documents &#39;This is a sample document.&#39; and &#39;This 
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-processor">Text Processor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-analyzer">Text Analyzer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-visualizer">Text Visualizer</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
