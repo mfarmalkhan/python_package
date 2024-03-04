@@ -43,10 +43,3 @@ class TextVisualizer:
         plt.tight_layout()
         plt.show()
     
-# Example usage:
-
-# visualizer = TextVisualizer()
-# text = "Some example text for visualization. This text will be visualized using the word cloud and bar chart."
-
-# visualizer.word_cloud(text)
-# visualizer.bar_chart(text)
