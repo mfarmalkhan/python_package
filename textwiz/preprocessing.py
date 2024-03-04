@@ -75,19 +75,3 @@ class TextProcessor:
         lem_sentence = reduce(lambda x, y: x + " " + lemmatizer.lemmatize(y), self.tokenize(text), "")
         return lem_sentence
 
-
-# Example usage:
-
-# processor = TextProcessor(extra_stopwords=['some', 'extra', 'stopwords'])
-# text = "Some example text with punctuation! And some extra words."
-# processed_text = processor.remove_punctuation(text)
-# tokens = processor.tokenize(processed_text)
-# tokens_without_stopwords = processor.remove_stopwords(processed_text)
-# stemmed_text = processor.stemming(processed_text)
-# lemmatized_text = processor.lemmatization(processed_text)
-
-# print("Processed Text:", processed_text)
-# print("Tokens:", tokens)
-# print("Tokens without stopwords:", tokens_without_stopwords)
-# print("Stemmed Text:", stemmed_text)
-# print("Lemmatized Text:", lemmatized_text)
