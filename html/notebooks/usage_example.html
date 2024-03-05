@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>TextWiz Package &#8212; TextWiz</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/usage_example';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="textwiz package" href="../textwiz.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">TextWiz</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../textwiz.html">textwiz package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/usage_example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TextWiz Package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-processor">Text Processor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-analyzer">Text Analyzer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-visualizer">Text Visualizer</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="textwiz-package">
+<h1>TextWiz Package<a class="headerlink" href="#textwiz-package" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import package libraries</span>
+<span class="kn">from</span> <span class="nn">textwiz.preprocessing</span> <span class="kn">import</span> <span class="n">TextProcessor</span>
+<span class="kn">from</span> <span class="nn">textwiz.mining</span> <span class="kn">import</span> <span class="n">TextAnalyzer</span>
+<span class="kn">from</span> <span class="nn">textwiz.visuals</span> <span class="kn">import</span> <span class="n">TextVisualizer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="text-processor">
+<h2>Text Processor<a class="headerlink" href="#text-processor" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">processor</span> <span class="o">=</span> <span class="n">TextProcessor</span><span class="p">(</span><span class="n">extra_stopwords</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;some&#39;</span><span class="p">,</span> <span class="s1">&#39;extra&#39;</span><span class="p">,</span> <span class="s1">&#39;stopwords&#39;</span><span class="p">])</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;In the heart of the ancient forest, where sunlight filters through the dense canopy, lies a hidden sanctuary. Moss-covered stones mark the entrance, leading to a tranquil clearing encircled by towering trees.&quot;</span>
+
+<span class="n">processed_text</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">remove_punctuation</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">processed_text</span><span class="p">)</span>
+<span class="n">tokens_without_stopwords</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">remove_stopwords</span><span class="p">(</span><span class="n">processed_text</span><span class="p">)</span>
+<span class="n">stemmed_text</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">stemming</span><span class="p">(</span><span class="n">processed_text</span><span class="p">)</span>
+<span class="n">lemmatized_text</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">lemmatization</span><span class="p">(</span><span class="n">processed_text</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processed Text:&quot;</span><span class="p">,</span> <span class="n">processed_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tokens:&quot;</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tokens without stopwords:&quot;</span><span class="p">,</span> <span class="n">tokens_without_stopwords</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stemmed Text:&quot;</span><span class="p">,</span> <span class="n">stemmed_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lemmatized Text:&quot;</span><span class="p">,</span> <span class="n">lemmatized_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processed Text: In the heart of the ancient forest where sunlight filters through the dense canopy lies a hidden sanctuary Moss covered stones mark the entrance leading to a tranquil clearing encircled by towering trees 
+Tokens: [&#39;In&#39;, &#39;the&#39;, &#39;heart&#39;, &#39;of&#39;, &#39;the&#39;, &#39;ancient&#39;, &#39;forest&#39;, &#39;where&#39;, &#39;sunlight&#39;, &#39;filters&#39;, &#39;through&#39;, &#39;the&#39;, &#39;dense&#39;, &#39;canopy&#39;, &#39;lies&#39;, &#39;a&#39;, &#39;hidden&#39;, &#39;sanctuary&#39;, &#39;Moss&#39;, &#39;covered&#39;, &#39;stones&#39;, &#39;mark&#39;, &#39;the&#39;, &#39;entrance&#39;, &#39;leading&#39;, &#39;to&#39;, &#39;a&#39;, &#39;tranquil&#39;, &#39;clearing&#39;, &#39;encircled&#39;, &#39;by&#39;, &#39;towering&#39;, &#39;trees&#39;]
+Tokens without stopwords: [&#39;heart&#39;, &#39;ancient&#39;, &#39;forest&#39;, &#39;sunlight&#39;, &#39;filters&#39;, &#39;dense&#39;, &#39;canopy&#39;, &#39;lies&#39;, &#39;hidden&#39;, &#39;sanctuary&#39;, &#39;Moss&#39;, &#39;covered&#39;, &#39;stones&#39;, &#39;mark&#39;, &#39;entrance&#39;, &#39;leading&#39;, &#39;tranquil&#39;, &#39;clearing&#39;, &#39;encircled&#39;, &#39;towering&#39;, &#39;trees&#39;]
+Stemmed Text:  in the heart of the ancient forest where sunlight filter through the dens canopi lie a hidden sanctuari moss cover stone mark the entranc lead to a tranquil clear encircl by tower tree
+Lemmatized Text:  In the heart of the ancient forest where sunlight filter through the dense canopy lie a hidden sanctuary Moss covered stone mark the entrance leading to a tranquil clearing encircled by towering tree
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="text-analyzer">
+<h2>Text Analyzer<a class="headerlink" href="#text-analyzer" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analyzer</span> <span class="o">=</span> <span class="n">TextAnalyzer</span><span class="p">()</span>
+
+<span class="c1"># Example documents</span>
+<span class="n">documents</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;In the heart of the ancient forest, where sunlight filters through the dense canopy.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Moss-covered stones mark the entrance to a tranquil clearing encircled by towering trees.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Whispers of the wind intertwine with the songs of birds, creating a symphony of nature&#39;s harmony.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Time seems to stand still in this enchanted realm, where every leaf tells a tale and every rustle speaks of secrets untold.&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Bag of Words representation</span>
+<span class="n">bow_representation</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">bag_of_words</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bag of Words Representation:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bow_representation</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Document </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">doc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Generating N-grams</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;In the heart of the ancient forest lies a hidden sanctuary.&quot;</span>
+<span class="n">ngrams</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">generate_ngrams</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">N-grams:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ngrams</span><span class="p">)</span>
+
+<span class="c1"># TF-IDF vectors</span>
+<span class="n">tfidf_vectors</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">tf_idf</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">TF-IDF Vectors:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">vector</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tfidf_vectors</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Document </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">vector</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Keyword extraction based on importance (TF-IDF scores)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Whispers of the wind intertwine with the songs of birds, creating a symphony of nature&#39;s harmony.&quot;</span>
+<span class="n">keywords_imp</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">keyword_extraction_imp</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">num_keywords</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Keywords based on importance:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keywords_imp</span><span class="p">)</span>
+
+<span class="c1"># Keyword extraction based on frequency</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Time seems to stand still in this enchanted realm, where every leaf tells a tale and every rustle speaks of secrets untold.&quot;</span>
+<span class="n">keywords_freq</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">keyword_extraction_freq</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">num_keywords</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Keywords based on frequency:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keywords_freq</span><span class="p">)</span>
+
+<span class="c1"># Calculating text similarity</span>
+<span class="n">doc1</span> <span class="o">=</span> <span class="s2">&quot;In the heart of the ancient forest lies a hidden sanctuary.&quot;</span>
+<span class="n">doc2</span> <span class="o">=</span> <span class="s2">&quot;The ancient forest shelters a sacred grove where whispers of nature&#39;s secrets echo.&quot;</span>
+<span class="n">similarity_score</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">calculate_text_similarity</span><span class="p">(</span><span class="n">doc1</span><span class="p">,</span> <span class="n">doc2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Similarity between documents &#39;</span><span class="si">{</span><span class="n">doc1</span><span class="si">}</span><span class="s2">&#39; and &#39;</span><span class="si">{</span><span class="n">doc2</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">similarity_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bag of Words Representation:
+Document 1: [&#39;In&#39;, &#39;ancient&#39;, &#39;canopy.&#39;, &#39;dense&#39;, &#39;filters&#39;, &#39;forest,&#39;, &#39;heart&#39;, &#39;of&#39;, &#39;sunlight&#39;, &#39;the&#39;, &#39;through&#39;, &#39;where&#39;]
+Document 2: [&#39;Moss-covered&#39;, &#39;a&#39;, &#39;by&#39;, &#39;clearing&#39;, &#39;encircled&#39;, &#39;entrance&#39;, &#39;mark&#39;, &#39;stones&#39;, &#39;the&#39;, &#39;to&#39;, &#39;towering&#39;, &#39;tranquil&#39;, &#39;trees.&#39;]
+Document 3: [&#39;Whispers&#39;, &#39;a&#39;, &#39;birds,&#39;, &#39;creating&#39;, &#39;harmony.&#39;, &#39;intertwine&#39;, &quot;nature&#39;s&quot;, &#39;of&#39;, &#39;songs&#39;, &#39;symphony&#39;, &#39;the&#39;, &#39;wind&#39;, &#39;with&#39;]
+Document 4: [&#39;Time&#39;, &#39;a&#39;, &#39;and&#39;, &#39;enchanted&#39;, &#39;every&#39;, &#39;in&#39;, &#39;leaf&#39;, &#39;of&#39;, &#39;realm,&#39;, &#39;rustle&#39;, &#39;secrets&#39;, &#39;seems&#39;, &#39;speaks&#39;, &#39;stand&#39;, &#39;still&#39;, &#39;tale&#39;, &#39;tells&#39;, &#39;this&#39;, &#39;to&#39;, &#39;untold.&#39;, &#39;where&#39;]
+
+N-grams:
+[&#39;In the heart&#39;, &#39;the heart of&#39;, &#39;heart of the&#39;, &#39;of the ancient&#39;, &#39;the ancient forest&#39;, &#39;ancient forest lies&#39;, &#39;forest lies a&#39;, &#39;lies a hidden&#39;, &#39;a hidden sanctuary.&#39;]
+
+TF-IDF Vectors:
+Document 1: [0.049510512897138946, 0.0, 0.049510512897138946, 0.0, 0.049510512897138946, 0.049510512897138946, 0.020548719460841487, 0.049510512897138946, 0.049510512897138946, 0.049510512897138946, 0.049510512897138946, 0.049510512897138946]
+Document 2: [0.053319013889226566, 0.053319013889226566, 0.053319013889226566, 0.0, 0.053319013889226566, 0.022129390188598528, -0.017164888562631517, 0.053319013889226566, 0.053319013889226566, 0.053319013889226566, 0.053319013889226566, 0.053319013889226566, 0.053319013889226566]
+Document 3: [0.04332169878499658, 0.0, 0.0, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658, -0.013946471957138107, 0.04332169878499658, 0.04332169878499658, 0.04332169878499658]
+Document 4: [0.03150669002545206, 0.03150669002545206, 0.013076457838717312, 0.03150669002545206, 0.03150669002545206, 0.0, 0.03150669002545206, 0.03150669002545206, 0.03150669002545206, 0.013076457838717312, 0.06301338005090412, 0.03150669002545206, 0.03150669002545206, -0.010142888696100442, 0.03150669002545206, 0.03150669002545206, 0.03150669002545206, 0.03150669002545206, 0.0, 0.03150669002545206, 0.03150669002545206]
+
+Keywords based on importance:
+[&#39;Whispers&#39;, &#39;of&#39;, &#39;the&#39;]
+
+Keywords based on frequency:
+[&#39;every&#39;, &#39;Time&#39;, &#39;seems&#39;]
+
+Similarity between documents &#39;In the heart of the ancient forest lies a hidden sanctuary.&#39; and &#39;The ancient forest shelters a sacred grove where whispers of nature&#39;s secrets echo.&#39;: 25.00%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="text-visualizer">
+<h2>Text Visualizer<a class="headerlink" href="#text-visualizer" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visualizer</span> <span class="o">=</span> <span class="n">TextVisualizer</span><span class="p">()</span>
+
+<span class="n">text_vis</span> <span class="o">=</span> <span class="s2">&quot;In the heart of the ancient forest, where sunlight filters through the dense canopy, lies a hidden sanctuary. Moss-covered stones mark the entrance, leading to a tranquil clearing encircled by towering trees.&quot;</span>
+
+<span class="c1"># Word Cloud</span>
+<span class="n">visualizer</span><span class="o">.</span><span class="n">word_cloud</span><span class="p">(</span><span class="n">text_vis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e6ef441d9e7514e819f2c899d536476fed88f85093c91b99b626b9870129e72b.png" src="../_images/e6ef441d9e7514e819f2c899d536476fed88f85093c91b99b626b9870129e72b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bar chart</span>
+<span class="n">visualizer</span><span class="o">.</span><span class="n">bar_chart</span><span class="p">(</span><span class="n">text_vis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c174c5f8161af80b187bb5d33922fe506014922fb338a00f3df77078cd29890d.png" src="../_images/c174c5f8161af80b187bb5d33922fe506014922fb338a00f3df77078cd29890d.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../textwiz.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">textwiz package</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-processor">Text Processor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-analyzer">Text Analyzer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-visualizer">Text Visualizer</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By M.Farmal Khan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, M.Farmal Khan.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
