@@ -36,7 +36,7 @@ The “textwiz” package consists of three main modules: preprocessing, mining,
 
 ``` bash
 
-pip install textwiz
+pip install git+https://github.com/mfarmalkhan/python_package#egg=TextWiz
 
 ```
 
