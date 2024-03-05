@@ -1,10 +1,10 @@
 # TextWiz
 
 
-
-[![Documentation Status](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://your-github-username.github.io/your-repo-name/)
-[![Build Status](https://img.shields.io/travis/your-github-username/your-repo-name/master.svg?label=tests)](https://travis-ci.org/your-github-username/your-repo-name)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/your-github-username/your-repo-name/blob/master/LICENSE)
+[![Documentation Status](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://mfarmalkhan.github.io/python_package)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Tests](https://github.com/mfarmalkhan/python_package/actions/workflows/docs.yml/badge.svg)
+ 
 
 ## Overview
 
@@ -31,8 +31,29 @@ The “textwiz” package consists of three main modules: preprocessing, mining,
 - Visualization:
   - Word Cloud
   - Bar Chart of word frequency 
-
+  
 ## Installation
 
-```bash
+``` bash
+
 pip install textwiz
+
+```
+
+## Usage
+
+```bash
+
+# importing package in code
+
+from textwiz.preprocessing import TextProcessor
+
+# Example
+
+processor = TextProcessor()
+text = "In the heart of the ancient forest, where sunlight filters through the dense canopy, lies a hidden sanctuary. Moss-covered stones mark the entrance, leading to a tranquil clearing encircled by towering trees."
+processed_text = processor.remove_punctuation(text)
+print("Processed Text:", processed_text)
+
+
+```
