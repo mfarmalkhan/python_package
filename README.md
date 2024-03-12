@@ -3,8 +3,7 @@
 
 [![Documentation Status](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://mfarmalkhan.github.io/python_package)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-![Tests](https://github.com/mfarmalkhan/python_package/actions/workflows/docs.yml/badge.svg)
- 
+![Tests](https://github.com/mfarmalkhan/python_package/actions/workflows/tests.yml/badge.svg)
 
 ## Overview
 
