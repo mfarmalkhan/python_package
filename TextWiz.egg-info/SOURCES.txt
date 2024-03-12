@@ -1,6 +1,7 @@
 LICENSE.txt
 README.md
 pyproject.toml
+setup.cfg
 setup.py
 TextWiz.egg-info/PKG-INFO
 TextWiz.egg-info/SOURCES.txt
