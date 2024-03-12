@@ -38,6 +38,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install tox tox-gh-actions
+    
+    - name: Download NLTK resources
+      run: python download_nltk_resources.py    
 
     # The final step runs the tox command, which is a testing tool commonly used in Python projects. 
     # The tox configuration file (tox.ini) in your project specifies how the tests should be executed.
