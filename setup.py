@@ -1,3 +1,13 @@
-from setuptools import setup
+import setuptools
+import nltk
 
-setup()
+# Function to download NLTK resources during installation
+def download_nltk_resources():
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+
+download_nltk_resources()
+
+setuptools.setup()
+
