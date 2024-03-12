@@ -280,7 +280,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-textwiz.mining">textwiz.mining module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-textwiz.preprocessing">textwiz.preprocessing module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textwiz-visuals-module">textwiz.visuals module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-textwiz.visuals">textwiz.visuals module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-textwiz">Module contents</a></li>
 </ul>
             </nav>
@@ -503,8 +503,49 @@ num_keywords (int): Number of keywords to extract (default is 5).</p>
 </dd></dl>
 
 </section>
-<section id="textwiz-visuals-module">
-<h2>textwiz.visuals module<a class="headerlink" href="#textwiz-visuals-module" title="Permalink to this headline">#</a></h2>
+<section id="module-textwiz.visuals">
+<span id="textwiz-visuals-module"></span><h2>textwiz.visuals module<a class="headerlink" href="#module-textwiz.visuals" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="textwiz.visuals.TextVisualizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textwiz.visuals.</span></span><span class="sig-name descname"><span class="pre">TextVisualizer</span></span><a class="reference internal" href="_modules/textwiz/visuals.html#TextVisualizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#textwiz.visuals.TextVisualizer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#textwiz.visuals.TextVisualizer.bar_chart" title="textwiz.visuals.TextVisualizer.bar_chart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bar_chart</span></code></a>(text)</p></td>
+<td><p>Create and display a bar chart showing the frequency of each word in the input text.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#textwiz.visuals.TextVisualizer.word_cloud" title="textwiz.visuals.TextVisualizer.word_cloud"><code class="xref py py-obj docutils literal notranslate"><span class="pre">word_cloud</span></code></a>(text)</p></td>
+<td><p>Generate and display a word cloud visualization for the given text.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="textwiz.visuals.TextVisualizer.bar_chart">
+<span class="sig-name descname"><span class="pre">bar_chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/textwiz/visuals.html#TextVisualizer.bar_chart"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#textwiz.visuals.TextVisualizer.bar_chart" title="Permalink to this definition">#</a></dt>
+<dd><p>Create and display a bar chart showing the frequency of each word in the input text.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>text (str): The input text for which the bar chart will be generated.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="textwiz.visuals.TextVisualizer.word_cloud">
+<span class="sig-name descname"><span class="pre">word_cloud</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/textwiz/visuals.html#TextVisualizer.word_cloud"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#textwiz.visuals.TextVisualizer.word_cloud" title="Permalink to this definition">#</a></dt>
+<dd><p>Generate and display a word cloud visualization for the given text.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>text (str): The input text for generating the word cloud.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-textwiz">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-textwiz" title="Permalink to this headline">#</a></h2>
@@ -562,7 +603,7 @@ num_keywords (int): Number of keywords to extract (default is 5).</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-textwiz.mining">textwiz.mining module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-textwiz.preprocessing">textwiz.preprocessing module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textwiz-visuals-module">textwiz.visuals module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-textwiz.visuals">textwiz.visuals module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-textwiz">Module contents</a></li>
 </ul>
   </nav></div>
